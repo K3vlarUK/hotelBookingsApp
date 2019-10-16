@@ -26,7 +26,7 @@ export default {
     return{
       guestName: '',
       guestEmail: '',
-      checkedIn: null
+      checkedIn: false
     }
   },
   methods:{
