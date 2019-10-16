@@ -1,6 +1,7 @@
 <template lang="html">
   <div id="app">
     <booking-form/>
+    <hr/>
     <booking-table :bookings="bookings"/>
   </div>
 </template>
@@ -32,6 +33,13 @@ export default {
     eventBus.$on('booking-deleted', id => {
       const index = this.bookings.findIndex(booking => booking._id === id);
       this.bookings.splice(index, 1);
+    })
+
+    eventBus.$on('booking-updated', id => {
+      this.fetchData();
+      // const index = this.bookings.findIndex(booking => booking._id === id);
+      // const updatedCheckIn = !this.bookings[index].checkedIn;
+      // this.bookings[index].checkedIn = updatedCheckIn;
     })
   },
   methods: {

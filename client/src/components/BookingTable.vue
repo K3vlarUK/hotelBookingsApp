@@ -33,4 +33,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
+table {
+  border: 2px solid black;
+}
+
+th {
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+tr {
+  background-color: lightSlateGrey;
+  border-bottom: 2px solid black;
+}
 </style>
