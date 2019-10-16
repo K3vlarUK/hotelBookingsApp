@@ -1,10 +1,12 @@
 <template lang="html">
   <div id="app">
     <booking-form/>
+    <booking-list :bookings="bookings"/>
   </div>
 </template>
 
 <script>
+import BookingList from './components/BookingList.vue';
 import {eventBus} from './main.js';
 import BookingForm from './components/BookingForm.vue';
 import BookingService from './services/BookingService.js';
@@ -17,7 +19,8 @@ export default {
     }
   },
   components: {
-    'booking-form': BookingForm
+    'booking-form': BookingForm,
+    'booking-list': BookingList
   },
   mounted(){
     this.fetchData();
