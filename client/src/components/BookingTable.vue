@@ -1,18 +1,24 @@
 <template lang="html">
   <div id="bookingsList">
-    <ul>
-      <list-element v-for="booking in bookings" :booking="booking"></list-element>
-    </ul>
+    <table>
+      <tr>
+        <th>Guest Name</th>
+        <th>Guest Email</th>
+        <th>Checked In</th>
+        <th>Delete?</th>
+      </tr>
+      <table-row v-for="booking in bookings" :booking="booking"></table-row>
+    </table>
   </div>
 </template>
 
 <script>
-import ListElement from './ListElement.vue';
+import TableRow from './TableRow.vue';
 import {eventBus} from '../main.js';
 import BookingService from '../services/BookingService';
 
 export default {
-  name: 'booking-list',
+  name: 'booking-table',
   props: ['bookings'],
   methods: {
     handleDelete(id) {
@@ -21,7 +27,7 @@ export default {
     }
   },
   components: {
-    'list-element': ListElement
+    'table-row': TableRow
   }
 }
 </script>
